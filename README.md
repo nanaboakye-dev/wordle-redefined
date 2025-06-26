@@ -1,15 +1,15 @@
-# Word Raider - MVC Architecture
+# Wordle - MVC Architecture
 
 ## Motivation
 
 Growing up, I had a love-hate relationship with the Wordle game on the New York Times website. Sometimes I could complete it with ease, but on other occasions it frustrated me so much. I always wished I had a hint sometimes! This inspired me to create my own alternate version of the game, with helpful hints and a fresh take on the experience.
 
-This is a refactored version of the Word Raider game using the Model-View-Controller (MVC) architectural pattern for better code organization and maintainability.
+This is a refactored version of the Wordle game using the Model-View-Controller (MVC) architectural pattern for better code organization and maintainability.
 
 ## File Structure
 
 ```
-word-raider/
+wordle/
 ├── index.html
 ├── styles.css
 ├── config.js
