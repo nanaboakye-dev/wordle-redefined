@@ -1,0 +1,31 @@
+# Node modules (if you ever add a backend or use npm)
+node_modules/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# IDE/editor settings
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Environment files (if you ever use them again)
+.env
+.env.*
+
+# Build output (if you add a build step)
+dist/
+build/
+
+# Misc
+*.bak
+*.tmp
+
+# Python cache (if you use Python scripts)
+__pycache__/
+*.pyc

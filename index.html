@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Raider</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Word Raider</h1>
+            <p class="subtitle">Guess the 5-letter word before your turns run out!</p>
+        </header>
+
+        <div class="game-board">
+            <div class="turns-container">
+                <span id="turns-label">Turns left: </span>
+                <span id="turns-count">6</span>
+            </div>
+
+            <div class="hints-container">
+                <span id="hints-label">Hints left: </span>
+                <span id="hints-count">3</span>
+            </div>
+
+            <div class="word-display">
+                <div id="word-pattern" class="word-pattern">_ _ _ _ _</div>
+            </div>
+
+            <div class="letters-feedback">
+                <div class="feedback-section">
+                    <h3>Misplaced Letters</h3>
+                    <div id="misplaced-letters" class="letters-container">None</div>
+                </div>
+                <div class="feedback-section">
+                    <h3>Incorrect Letters</h3>
+                    <div id="incorrect-letters" class="letters-container">None</div>
+                </div>
+            </div>
+
+            <div class="input-section">
+                <input type="text" id="guess-input" maxlength="5" placeholder="Enter 5-letter word" autofocus>
+                <button id="guess-button">Guess</button>
+            </div>
+
+            <div class="hints-section">
+                <h3>Hints</h3>
+                <div class="hint-buttons">
+                    <button id="hint1-button" class="hint-button">Vowel Positions</button>
+                    <button id="hint2-button" class="hint-button">Vowels Used</button>
+                    <button id="hint3-button" class="hint-button">Definition</button>
+                </div>
+                <div id="hint-display" class="hint-display"></div>
+            </div>
+
+            <div class="game-history">
+                <h3>Your Guesses</h3>
+                <div id="guesses-list" class="guesses-list"></div>
+            </div>
+        </div>
+
+        <div id="game-result" class="game-result hidden">
+            <h2 id="result-message"></h2>
+            <p id="word-reveal"></p>
+            <p id="score-display"></p>
+            <button id="new-game-button">New Game</button>
+        </div>
+
+        <button id="help-button" title="How to Play" style="position: fixed; top: 20px; right: 20px; z-index: 1000; font-size: 1.5em; width: 2em; height: 2em; border-radius: 50%; border: none; background: #eee; cursor: pointer;">?</button>
+        <div id="instructions" class="instructions" style="display: none; position: fixed; top: 60px; right: 20px; width: 320px; background: #fff; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); padding: 1em; z-index: 1001;">
+            <h3>How to Play</h3>
+            <ul>
+                <li>Guess the 5-letter word in 6 turns or less</li>
+                <li>After each guess, you'll see which letters are correct, misplaced, or incorrect</li>
+                <li><strong>Green</strong> letters: in the word and in the right position</li>
+                <li><strong>Orange</strong> letters: in the word but in the wrong position</li>
+                <li><strong>Red</strong> letters: not in the word</li>
+                <li>You can use up to 3 hints during the game</li>
+                <li>Scoring: Start with 600 points. Each wrong guess: -100 pts. Each hint used: -25 pts.</li>
+            </ul>
+        </div>
+    <script>
+    // Show/hide instructions modal
+    const helpBtn = document.getElementById('help-button');
+    const instructions = document.getElementById('instructions');
+    helpBtn.addEventListener('click', () => {
+        if (instructions.style.display === 'none') {
+            instructions.style.display = 'block';
+        } else {
+            instructions.style.display = 'none';
+        }
+    });
+    // Optional: Hide instructions when clicking outside
+    document.addEventListener('mousedown', (e) => {
+        if (instructions.style.display === 'block' && !instructions.contains(e.target) && e.target !== helpBtn) {
+            instructions.style.display = 'none';
+        }
+    });
+    </script>
+    </div>
+
+    <!-- Load all JavaScript modules in the correct order -->
+    <script src="config.js"></script>
+    <script src="GameModel.js"></script>
+    <script src="WordService.js"></script>
+    <script src="GameView.js"></script>
+    <script src="GameController.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
