@@ -21,12 +21,17 @@ class Config {
             WORDS_FILE: "words.txt"
         };
         
-        this.FALLBACK_WORDS = [
-            "games", "house", "plant", "shirt", "green", 
-            "water", "music", "dance", "earth", "light",
-            "power", "space", "ocean", "phone", "table",
-            "chair", "heart", "smile", "dream", "world"
+        // Main word list (hardcoded from words.txt)
+        this.WORD_LIST = [
+            "heart", "kings", "bears", "crave", "train", "maine", "about", "again", "below", "first",
+            "great", "house", "large", "learn", "never", "other", "place", "right", "small", "sound",
+            "still", "study", "think", "under", "world", "write", "young", "child", "class", "group",
+            "music", "point", "power", "round", "start", "story", "today", "voice", "water", "white",
+            "woman", "words", "years", "light"
         ];
+
+        // Optionally, keep fallback words for legacy support
+        this.FALLBACK_WORDS = this.WORD_LIST;
     }
     
     getApiKey(service) {
@@ -41,8 +46,8 @@ class Config {
         return this.API_ENDPOINTS[endpoint];
     }
     
-    getFallbackWords() {
-        return this.FALLBACK_WORDS;
+    getWordList() {
+        return this.WORD_LIST;
     }
 }
 

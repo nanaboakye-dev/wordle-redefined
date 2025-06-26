@@ -18,7 +18,6 @@ wordle/
 ├── GameView.js
 ├── GameController.js
 ├── main.js
-├── words.txt
 └── README.md
 ```
 
@@ -93,9 +92,9 @@ this.API_KEYS = {
 
 Get your dictionary API keys from [Merriam-Webster Dictionary API](https://dictionaryapi.com/)
 
-### 4. Word List (Optional)
+### 4. Word List
 
-Create a `words.txt` file with one word per line for custom word lists.
+The word list is hardcoded directly in `config.js` as a JavaScript array, so no external `words.txt` file is needed. You can edit the array in `config.js` to customize the game's vocabulary.
 
 ## Class Documentation
 
