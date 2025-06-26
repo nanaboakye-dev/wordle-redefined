@@ -5,24 +5,9 @@ class WordService {
     }
     
     async getRandomWord() {
-        try {
-            // Try to fetch from the local words.txt file first
-            const response = await fetch(this.config.getApiEndpoint('WORDS_FILE'));
-            if (response.ok) {
-                const text = await response.text();
-                const words = this.parseWordsFromText(text);
-                
-                if (words.length > 0) {
-                    return this.selectRandomWord(words);
-                }
-            }
-        } catch (error) {
-            console.error("Error fetching words from file:", error);
-        }
-        
-        // Fallback to predefined words
-        const fallbackWords = this.config.getFallbackWords();
-        return this.selectRandomWord(fallbackWords);
+        // Use the hardcoded word list from config.js
+        const words = this.config.getWordList();
+        return this.selectRandomWord(words);
     }
     
     parseWordsFromText(text) {
