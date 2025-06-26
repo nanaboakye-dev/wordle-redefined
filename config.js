@@ -21,7 +21,7 @@ class Config {
             WORDS_FILE: "words.txt"
         };
         
-        // Main word list (hardcoded from words.txt)
+        // Main word list
         this.WORD_LIST = [
             "heart", "kings", "bears", "crave", "train", "maine", "about", "again", "below", "first",
             "great", "house", "large", "learn", "never", "other", "place", "right", "small", "sound",
